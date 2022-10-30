@@ -1,4 +1,4 @@
-package bad;
+package bad.interfacesegregation;
 
 import java.util.List;
 

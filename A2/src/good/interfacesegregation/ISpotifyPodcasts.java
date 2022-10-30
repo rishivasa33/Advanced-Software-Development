@@ -1,4 +1,4 @@
-package good;
+package good.interfacesegregation;
 
 public interface ISpotifyPodcasts {
 

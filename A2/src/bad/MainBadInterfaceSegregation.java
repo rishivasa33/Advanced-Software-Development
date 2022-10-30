@@ -1,5 +1,8 @@
 package bad;
 
+import bad.interfacesegregation.SpotifyPodcast;
+import bad.interfacesegregation.SpotifyTrack;
+
 public class MainBadInterfaceSegregation {
 
     public static void main(String[] args) {
