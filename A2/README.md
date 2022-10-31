@@ -16,12 +16,11 @@ Each Package contains 3 Main methods to demonstrate a violation or resolution of
 
 Every sub-program can be compiled and run individually as:
 
-1) javac *.java
-2) java MainBadInterfaceSegregation
-3) java MainGoodInterfaceSegregation
-4) java MainBadLiskovSubstitution
-5) java MainGoodLiskovSubstitution
-6) java MainBadDependencyInversion
-7) java MainGoodDependencyInversion
+1) java MainBadInterfaceSegregation
+2) java MainGoodInterfaceSegregation
+3) java MainBadLiskovSubstitution
+4) java MainGoodLiskovSubstitution
+5) java MainBadDependencyInversion
+6) java MainGoodDependencyInversion
 
 NOTE: Java 17 or higher is preferred
