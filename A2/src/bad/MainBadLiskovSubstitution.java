@@ -1,6 +1,5 @@
 package bad;
 
-import bad.liskovsubstitution.FacebookPost;
 import bad.liskovsubstitution.ReelsPost;
 import bad.liskovsubstitution.TextPost;
 
