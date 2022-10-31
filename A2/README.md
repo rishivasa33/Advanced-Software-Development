@@ -14,7 +14,7 @@ The code is segregated into two packages: bad and good
 
 Each Package contains 3 Main methods to demonstrate a violation or resolution of 3 SOLID principles.
 
-Every sub-program can be compiled and run individually as:
+The entire project can be imported to your IDE (IntelliJ preferably) and run configurations can be created to execute the following Main classes:
 
 1) java MainBadInterfaceSegregation
 2) java MainGoodInterfaceSegregation
