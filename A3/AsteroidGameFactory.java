@@ -83,6 +83,10 @@ public class AsteroidGameFactory implements IAsteroidGameFactory
 			{
 				// TODO:  Implement a command to spawn a building.  It should be similar
 				//        to SPAWN_ASTEROID above.  The command must increment the building count!
+				int xCoordinate = Integer.parseInt(args[0]);
+				int yCoordinate = Integer.parseInt(args[1]);
+				BoardComponent square = GameBoard.Instance().GetBoard().get(yCoordinate).get(xCoordinate);
+				return new SpawnBuildingCommand(square, args);
 			}
 			case "SPAWN_SHIELD":
 			{

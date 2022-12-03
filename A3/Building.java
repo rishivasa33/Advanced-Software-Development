@@ -3,11 +3,12 @@
 public class Building extends BoardComponent
 {
 	private int buildingHealth;
-	
+
 	public Building()
 	{
 		super();
 		buildingHealth = 2;
+		System.out.print(" with health: " + buildingHealth + "\n");
 	}
 
 	@Override
