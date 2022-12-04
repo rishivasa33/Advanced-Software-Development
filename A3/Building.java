@@ -28,4 +28,20 @@ public class Building extends BoardComponent
 	{
 		// Do nothing, I'm a leaf.
 	}
+
+	// This Method reduces the health of the building by 1 when it is notified of an Asteroid Strike
+	// It also removes the building from the BoardComponent Composite
+	// and decrements total building count if the health of the building becomes 0
+	@Override
+	public void UpdateOnAsteroidHit() {
+		if (buildingHealth > 0) {
+			this.buildingHealth -= 1;
+		}
+		if (buildingHealth == 0) {
+			parent.Remove(this);
+			GameBoard.Instance().DecrementBuildingCount();
+			System.out.println("Reached Building's update with building health: " + buildingHealth + " and building count: " + GameBoard.Instance().GetBuildingCount());
+		}
+	}
+
 }

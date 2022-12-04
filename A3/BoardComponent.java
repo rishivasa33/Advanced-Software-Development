@@ -16,4 +16,6 @@ public abstract class BoardComponent
 	{
 		this.parent = parent;
 	}
+
+	public abstract void UpdateOnAsteroidHit();
 }

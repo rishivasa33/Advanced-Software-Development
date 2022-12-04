@@ -22,7 +22,9 @@ public class Asteroid extends BoardComponent
 			// observer to tell it that it impacted the ground in the square it belongs
 			// to.
 			// <-- Send event to observer.
-			
+			// Set value for the current square on which the event update activities should work
+			AsteroidImpacts.instance().setValue("square", parent);
+			AsteroidImpacts.instance().notifyObservers();
 			// It should then remove itself from its parent, it no longer exists in the
 			// hierarchy and should not receive any more operations.
 			parent.Remove(this);		
@@ -39,5 +41,11 @@ public class Asteroid extends BoardComponent
 	public void Remove(BoardComponent child)
 	{
 		// I'm a leaf!
-	}	
+	}
+
+	@Override
+	public void UpdateOnAsteroidHit() {
+		//No Update on getting notified of Asteroid Hit
+		//Sorry, Liskov
+	}
 }
