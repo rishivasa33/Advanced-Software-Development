@@ -68,7 +68,7 @@ public class AsteroidGameFactory implements IAsteroidGameFactory
 			{
 				int x = Integer.parseInt(args[0]);
 				int y = Integer.parseInt(args[1]);
-				BoardComponent square = GameBoard.Instance().GetBoard().get(y).get(x);
+				BoardComponent square = GameBoard.Instance().GetBoard().get(x).get(y);
 				return new SpawnAsteroidCommand(square, args);
 			}
 			case "TICK":
@@ -81,11 +81,9 @@ public class AsteroidGameFactory implements IAsteroidGameFactory
 			}
 			case "SPAWN_BUILDING":
 			{
-				// TODO:  Implement a command to spawn a building.  It should be similar
-				//        to SPAWN_ASTEROID above.  The command must increment the building count!
-				int xCoordinate = Integer.parseInt(args[0]);
-				int yCoordinate = Integer.parseInt(args[1]);
-				BoardComponent square = GameBoard.Instance().GetBoard().get(yCoordinate).get(xCoordinate);
+				int x = Integer.parseInt(args[0]);
+				int y = Integer.parseInt(args[1]);
+				BoardComponent square = GameBoard.Instance().GetBoard().get(x).get(y);
 				return new SpawnBuildingCommand(square, args);
 			}
 			case "SPAWN_SHIELD":
