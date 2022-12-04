@@ -36,11 +36,12 @@ public class Building extends BoardComponent
 	public void UpdateOnAsteroidHit() {
 		if (buildingHealth > 0) {
 			this.buildingHealth -= 1;
+			System.out.println("Asteroid Strike on Building!! Building health: " + buildingHealth );
 		}
 		if (buildingHealth == 0) {
 			parent.Remove(this);
 			GameBoard.Instance().DecrementBuildingCount();
-			System.out.println("Reached Building's update with building health: " + buildingHealth + " and building count: " + GameBoard.Instance().GetBuildingCount());
+			System.out.println("Total building count: " + GameBoard.Instance().GetBuildingCount());
 		}
 	}
 
