@@ -22,12 +22,15 @@ public class Asteroid extends BoardComponent
 			// observer to tell it that it impacted the ground in the square it belongs
 			// to.
 			// <-- Send event to observer.
-			// Set value for the current square on which the event update activities should work
+
+			// Set value for the current component (shield or square)
+			// on which the event update activities should work and then notify observers
 			AsteroidImpacts.instance().setValue("square", parent);
-			AsteroidImpacts.instance().notifyObservers();
+			AsteroidImpacts.instance().notifyObservers(parent);
+
 			// It should then remove itself from its parent, it no longer exists in the
 			// hierarchy and should not receive any more operations.
-			parent.Remove(this);		
+			parent.Remove(this);
 		}
 	}
 
@@ -44,8 +47,8 @@ public class Asteroid extends BoardComponent
 	}
 
 	@Override
-	public void UpdateOnAsteroidHit() {
-		//No Update on getting notified of Asteroid Hit
+	public void updateWhenAsteroidHits() {
+		//No Update on the Asteroid itself when getting notified of Asteroid hit. This is handled by Operation method
 		//Sorry, Liskov
 	}
 }

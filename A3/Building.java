@@ -1,4 +1,4 @@
-// Building is the leaf node for the composite pattern, Square's can have MULTIPLE Buildings
+// Building is the leaf node for the composite pattern, Square's can have MULTIPLE Buildings.
 // Buildings cannot have children.
 public class Building extends BoardComponent
 {
@@ -29,11 +29,12 @@ public class Building extends BoardComponent
 		// Do nothing, I'm a leaf.
 	}
 
-	// This Method reduces the health of the building by 1 when it is notified of an Asteroid Strike
-	// It also removes the building from the BoardComponent Composite
-	// and decrements total building count if the health of the building becomes 0
+	// This Method reduces the health of the building by 1
+	// when it is notified of an Asteroid Strike by the Square.
+	// It then removes the building from the BoardComponent Composite
+	// and decrements total building count if the health of the building becomes 0.
 	@Override
-	public void UpdateOnAsteroidHit() {
+	public void updateWhenAsteroidHits() {
 		if (buildingHealth > 0) {
 			this.buildingHealth -= 1;
 			System.out.println("Asteroid Strike on Building!! Building health: " + buildingHealth );

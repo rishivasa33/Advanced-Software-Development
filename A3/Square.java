@@ -5,7 +5,7 @@ public class Square extends BoardComponent implements IObserver
 {
 	private final ArrayList<BoardComponent> children;
 	private BoardComponent parent;
-	
+
 	public Square()
 	{
 		super();
@@ -39,8 +39,8 @@ public class Square extends BoardComponent implements IObserver
 	}
 
 	@Override
-	public void UpdateOnAsteroidHit() {
-		//No Update on getting notified of Asteroid hit
+	public void updateWhenAsteroidHits() {
+		//No Update on the shield itself when getting notified of Asteroid hit. This is handled by update method
 		//Sorry, Liskov
 	}
 
@@ -48,15 +48,17 @@ public class Square extends BoardComponent implements IObserver
 	// It then notifies its children via the Composite to take some action (if required)
 	@Override
 	public void update(Subject subject) {
-
 		Square currentSquare = (Square) subject.getValue("square");
 
 		//Iterate through the current square's children and notify them to take action on asteroid hit
 		ArrayList<BoardComponent> currentSquareChildren = new ArrayList<>(currentSquare.children);
 		for (int i = 0; i < currentSquareChildren.size(); i++) {
 			BoardComponent child = currentSquareChildren.get(i);
-			child.UpdateOnAsteroidHit();
+			child.updateWhenAsteroidHits();
 		}
 	}
 
+	public ArrayList<BoardComponent> getChildren() {
+		return children;
+	}
 }

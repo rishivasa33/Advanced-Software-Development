@@ -21,7 +21,9 @@ public class TickCommand extends Command
 		// The args for the Tick command are the number of times the command should tick
 		// meaning we could trigger more than one tick at once.
 		int numTicks = Integer.parseInt(args[0]);
+		System.out.println("---------------------------------------------");
 		System.out.println("Ticking " + numTicks + " times.");
+		System.out.println("---------------------------------------------");
 		for (int i = 0; i < numTicks; i++)
 		{
 			board.DoTick();

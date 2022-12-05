@@ -17,5 +17,5 @@ public abstract class BoardComponent
 		this.parent = parent;
 	}
 
-	public abstract void UpdateOnAsteroidHit();
+	public abstract void updateWhenAsteroidHits();
 }
